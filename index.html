@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <!-- metadata -->
+    <head>
+        <title>Temp Converter V1.0</title>
+    </head>
+
+    <!-- all content between body tags is visible to user on browser window -->
+    <body>
+
+        <div id="web-app-body">
+
+            <div id="input/output">
+                <label for="startingTemp">Starting temperature:</label>
+                <input type="number" id="startingTemp"/>
+
+                <label for="finalTemp">Final temperature:</label>
+                <input type="text" id="finalTemp" readonly/>
+
+                <br>
+                <br>
+                <label for="startingUnit">Starting unit:</label>
+                <select id="startingUnit">
+                    <option value="Fahrenheit">°F</option>
+                    <option value="Celsius">°C</option>
+                    <option value="Kelvin">K</option>
+                </select>
+            </div>
+
+            <div id="submitButton">
+                <br>
+                <input type="button" value="Convert"/>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -3,6 +3,7 @@
     <!-- metadata -->
     <head>
         <title>Temp Converter V1.0</title>
+        <link href="./style.css" rel="stylesheet" />
     </head>
 
     <!-- all content between body tags is visible to user on browser window -->
@@ -10,21 +11,32 @@
 
         <div id="web-app-body">
 
-            <div id="input/output">
+            <div id="header">
+                <h1>Temperature Converter</h1>
+                <hr>
+            </div>
+
+            <div id="input-output">
+                <div id="input">
                 <label for="startingTemp">Starting temperature:</label>
                 <input type="number" id="startingTemp"/>
+                </div>
 
+                <div id="output">
                 <label for="finalTemp">Final temperature:</label>
                 <input type="text" id="finalTemp" readonly/>
+                </div>
 
                 <br>
                 <br>
-                <label for="startingUnit">Starting unit:</label>
-                <select id="startingUnit">
-                    <option value="Fahrenheit">°F</option>
-                    <option value="Celsius">°C</option>
-                    <option value="Kelvin">K</option>
-                </select>
+                <div id="selectUnit">
+                    <label for="startingUnit">Starting unit:</label>
+                    <select id="startingUnit">
+                        <option value="Fahrenheit">°F</option>
+                        <option value="Celsius">°C</option>
+                        <option value="Kelvin">K</option>
+                    </select>
+                </div>
             </div>
 
             <div id="submitButton">

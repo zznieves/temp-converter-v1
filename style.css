@@ -1,0 +1,54 @@
+
+#header {
+    text-align: center;
+}
+
+div#web-app-body {
+
+    height: 300px;
+    width: 750px;
+    border-radius: 30px;
+}
+
+/* must set width before centering content*/
+#input, #output, #selectUnit, #submitButton {
+
+    width: fit-content;
+}
+
+/* center content inside of divs */
+div#web-app-body, #selectUnit {
+
+    margin: 15px auto 0px;
+}
+
+
+/* show borders */
+#web-app-body{
+    border: 1px solid black;
+}
+
+
+/* change from block-level to inline (want elements side by side*/
+#input, #output {
+    display: inline-block;
+    margin: 15px 5px 5px;
+
+}
+
+#input-output {
+    margin: 10px auto;
+    text-align: center;
+}
+
+/* styling rules for 'Convert' button */
+input[type ='button'] {
+    height: 30px;
+    width: 80px;
+
+}
+
+#submitButton {
+    margin: 10px auto;
+}
+

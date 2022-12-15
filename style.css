@@ -11,13 +11,13 @@ div#web-app-body {
 }
 
 /* must set width before centering content*/
-#input, #output, #selectUnit, #submitButton {
+#input, #output, #selectUnit-1, #selectUnit-2, #submitButton {
 
     width: fit-content;
 }
 
 /* center content inside of divs */
-div#web-app-body, #selectUnit {
+div#web-app-body {
 
     margin: 15px auto 0px;
 }
@@ -52,3 +52,8 @@ input[type ='button'] {
     margin: 10px auto;
 }
 
+/* center starting and final unit selections */
+#selectUnit-1, #selectUnit-2 {
+    
+    margin: 5px auto;
+}

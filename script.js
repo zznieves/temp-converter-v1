@@ -9,7 +9,11 @@ function calculate() {
     // get user input from elements and validate data
     let input = getUserInput();
 
+    // calculate final temperature
     let finalTemp = calculateFinalTemp(input[0], input[1], input[2]);
+    
+    // display result to user
+    
 }
 
 

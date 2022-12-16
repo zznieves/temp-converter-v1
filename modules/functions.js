@@ -25,13 +25,77 @@ function validate(startingTemp) {
     }
 }
 
+// helper functions
+
+// converting from Fahrenheit
+function convertFromF(startingTemp, finalUnit) {
+
+    // F --> C
+    if(finalUnit === 'Celsius') {
+        return (startingTemp - 32) * (5/9);
+    }
+    // F --> K
+    else {
+        return (startingTemp - 32) * (5/9) + 273.15;
+    }
+}
+
+// converting from Celsius
+function convertFromC(startingTemp, finalUnit) {
+
+    // C --> F
+    if(finalUnit === 'Fahrenheit'){
+        return (startingTemp * (9/5) + 32);
+    }
+    // C --> K
+    else {
+        return (Number(startingTemp) + 273.15);
+    }
+}
+
+// converting from Kelvin
+function convertFromK(startingTemp, finalUnit) {
+
+    // K --> F
+    if(finalUnit === 'Fahrenheit'){
+        return ((startingTemp - 273.15) * (9/5) + 32);
+    }
+    // K --> C
+    else {
+        return (startingTemp - 273.15);
+    }
+}
+
+
+
 // process data
 function calculateFinalTemp(startingTemp, startingUnit, finalUnit) {
 
-    // which formula do we use (what are we converting from and to)
+    // if startingUnit and finalUnit are the same, no calculations required
+    if(startingUnit === finalUnit) {
+        return String(startingTemp) + finalUnit;
+    }
+
+    // which formula do we use (what are we converting from)
+    switch (startingUnit) {
+        case 'Fahrenheit':
+            // call to convertFromF helper function
+            return convertFromF(startingTemp, finalUnit);
+
+        case 'Celsius':
+            // call to convertFromC helper function
+            return convertFromC(startingTemp, finalUnit);
+
+        default:
+            // call to convertFromK helper function
+            return convertFromK(startingTemp, finalUnit);
+    }
 
 
 }
+
+
+
 
 // get user input from HTML elements
 function getUserInput() {

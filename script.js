@@ -9,14 +9,18 @@ function calculate() {
     // get user input from elements and validate data
     let input = getUserInput();
 
+
+    // if an Error was thrown for invalid input (startingTemp) stop the current process
+    if(input[0] === '') {
+        return;
+    }
+
     // calculate final temperature
-    let finalTemp = Number(calculateFinalTemp(input[0], input[1], input[2]));
+    let finalTemp = calculateFinalTemp(input[0], input[1], input[2]);
     
     // display result to user
     let outputBox = document.querySelector('#finalTemp');
-    outputBox.value = finalTemp.toFixed(2) + ' °' + input[2][0];
-
-    alert(finalTemp);
+    outputBox.value = finalTemp;
 }
 
 

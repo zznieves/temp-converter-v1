@@ -20,8 +20,9 @@ function validate(startingTemp) {
         }
     }
     catch(e) {
-        // notify user of Error and stop code from current cycle
+        // notify user of Error
         alert(e);
+
     }
 }
 
@@ -30,15 +31,14 @@ function validate(startingTemp) {
 // converting from Fahrenheit
 function convertFromF(startingTemp, finalUnit) {
 
-    alert('Hello');
 
     // F --> C
     if(finalUnit === 'Celsius') {
-        return (startingTemp - 32) * (5/9);
+        return ((startingTemp - 32) * (5/9));
     }
     // F --> K
     else {
-        return (startingTemp - 32) * (5/9) + 273.15;
+        return ((startingTemp - 32) * (5/9) + 273.15);
     }
 }
 
@@ -51,7 +51,7 @@ function convertFromC(startingTemp, finalUnit) {
     }
     // C --> K
     else {
-        return (Number(startingTemp) + 273.15);
+        return (Number(startingTemp) + 273.15)
     }
 }
 
@@ -70,6 +70,30 @@ function convertFromK(startingTemp, finalUnit) {
 
 
 
+
+
+// format answer to display to user
+function formatAnswer(finalTemp, finalUnit) {
+
+    // if finalUnit is °F
+    if(finalUnit === 'Fahrenheit') {
+        
+        return Number(finalTemp).toFixed(2) + ' °F';
+    }
+    // if finalUnit is °C
+    else if(finalUnit === 'Celsius') {
+
+        return Number(finalTemp).toFixed(2) + ' °C'
+    }
+    // if finalUnit is K
+    else {
+        
+        return Number(finalTemp).toFixed(2) + ' K';
+    }
+}
+
+
+
 // process data
 function calculateFinalTemp(startingTemp, startingUnit, finalUnit) {
 
@@ -77,22 +101,22 @@ function calculateFinalTemp(startingTemp, startingUnit, finalUnit) {
     // if startingUnit and finalUnit are the same, no calculations required
     if(startingUnit === finalUnit) {
         console.log('same unit');
-        return startingTemp;
+        return formatAnswer(startingTemp, finalUnit);
     }
 
     // which formula do we use (what are we converting from)
     switch (startingUnit) {
         case 'Fahrenheit':
             // call to convertFromF helper function
-            return convertFromF(startingTemp, finalUnit);
+            return formatAnswer(convertFromF(startingTemp, finalUnit), finalUnit);
 
         case 'Celsius':
             // call to convertFromC helper function
-            return convertFromC(startingTemp, finalUnit);
+            return formatAnswer(convertFromC(startingTemp, finalUnit), finalUnit);
 
         default:
             // call to convertFromK helper function
-            return convertFromK(startingTemp, finalUnit);
+            return formatAnswer(convertFromK(startingTemp, finalUnit), finalUnit);
     }
 
 
@@ -112,7 +136,7 @@ function getUserInput() {
     // call to helper function: validate starting temperature
     validate(startingTemp);
 
-    // input is valid, return data to caller
+    // return all 3 inputs from HTML elements
     return [startingTemp, startingUnit, finalUnit];
     
     

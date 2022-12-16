@@ -30,6 +30,8 @@ function validate(startingTemp) {
 // converting from Fahrenheit
 function convertFromF(startingTemp, finalUnit) {
 
+    alert('Hello');
+
     // F --> C
     if(finalUnit === 'Celsius') {
         return (startingTemp - 32) * (5/9);
@@ -71,9 +73,11 @@ function convertFromK(startingTemp, finalUnit) {
 // process data
 function calculateFinalTemp(startingTemp, startingUnit, finalUnit) {
 
+
     // if startingUnit and finalUnit are the same, no calculations required
     if(startingUnit === finalUnit) {
-        return String(startingTemp) + finalUnit;
+        console.log('same unit');
+        return startingTemp;
     }
 
     // which formula do we use (what are we converting from)
